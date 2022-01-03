@@ -1,39 +1,37 @@
 package com.example.expense_tracker;
 
+import com.google.firebase.database.Exclude;
+
 public class Transaction {
-    private String amount,credit,debit;
+    private String amount,type,documentId;
 
     public Transaction(){
 
+    }
+
+    public Transaction(String amount,String type){
+        this.amount = amount;
+        this.type = type;
+
+    }
+    @Exclude
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
     }
 
     public String getAmount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
-        this.amount = amount;
+
+
+    public String getType() {
+        return type;
     }
 
-    public String getCredit() {
-        return credit;
-    }
 
-    public void setCredit(String credit) {
-        this.credit = credit;
-    }
-
-    public String getDebit() {
-        return debit;
-    }
-
-    public void setDebit(String debit) {
-        this.debit = debit;
-    }
-
-    public Transaction(String amount, String credit, String debit){
-        this.amount = amount;
-        this.credit = credit;
-        this.debit = debit;
-    }
-} 
+}
